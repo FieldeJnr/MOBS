@@ -1,0 +1,39 @@
+﻿@model Mobs.Web.Models.LoginModel
+@{
+    ViewBag.Title = "Login";
+
+}
+
+<div class="d-flex justify-content-center">
+    <div class="col-6">
+        <h2>Login</h2>
+        <p>Welcome to the login page, you need to complete the form below before you can connect to the system</p>
+        @using (Html.BeginForm())
+        {
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                @Html.TextBoxFor(m => m.EmailAddress, new { placeholder = "Enter Email", @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                @Html.PasswordFor(m => m.Password, new { placeholder = "Enter Password", @class = "form-control" })
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    @Html.CheckBoxFor(m => m.RememberMe, new { @class = "form-check-input" })
+                    Remember Me
+                </label>
+            </div>
+            
+            @Html.CustomValidationSummary()
+            
+            <div class="d-flex justify-content-between bd-highlight mb-3">
+                <div class="p-2 bd-highlight"><a href="@Url.Action("Register","Account")" class="btn btn-outline-primary">Register</a></div>
+                <div class="p-2 bd-highlight"><button type="submit" class="btn btn-outline-primary">Login</button></div>
+            </div>
+            
+        }
+
+
+    </div>
+</div>
