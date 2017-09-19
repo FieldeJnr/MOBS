@@ -21,6 +21,7 @@
             .mousedown(function (e) {
                 isDown = true;
                 ctx.beginPath();
+                // test comment
                 canvasX = e.pageX - myCanvas.offsetLeft;
                 canvasY = e.pageY - myCanvas.offsetTop;
                 ctx.moveTo(canvasX, canvasY);
