@@ -29,6 +29,8 @@
                 if (isDown !== false) {
                     canvasX = e.pageX - myCanvas.offsetLeft;
                     canvasY = e.pageY - myCanvas.offsetTop;
+                    ctx.lineCap = "round";
+                    ctx.lineJoin = "round";
                     ctx.lineTo(canvasX, canvasY);
                     ctx.strokeStyle = "#000";
                     ctx.stroke();
